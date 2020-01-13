@@ -1,0 +1,59 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+    @apply bg-gray-200;
+}
+
+.todo {
+    position: relative;
+
+    .todo-content {
+        @apply bg-white;
+
+        padding-bottom: 50px;
+
+        .todo-list {
+            .todo-list-item {
+                &:hover {
+                    .todo-button-remove {
+                        display: block;
+                    }
+                }
+
+                &.completed {
+                    .todo-button-check {
+                        @apply border-teal-300 text-teal-300;
+                    }
+                }
+
+                .todo-button-check {
+                    &:hover {
+                        @apply border-teal-300 text-teal-300;
+                    }
+                }
+
+                .todo-button-remove {
+                    display: none;
+                }
+            }
+        }
+
+        .todo-input {
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+        }
+    }
+
+    .todo-button-add {
+        bottom: -24px;
+        position: absolute;
+        width: 100%;
+    }
+}
